@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix | Happy Birthday Sherbano</title>
+    <style>
+        :root {
+            --netflix-red: #E50914;
+            --bg-black: #141414;
+            --card-gray: #181818;
+            --text-gray: #b3b3b3;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-black);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* --- PROFILE SELECTION --- */
+        #profile-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: radial-gradient(circle, #2b2b2b 0%, #000 100%);
+        }
+
+        .profile-title {
+            font-size: 3rem;
+            font-weight: 500;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .profile-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .profile-box {
+            text-align: center;
+            cursor: pointer;
+            width: 160px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 4px;
+            border: 4px solid transparent;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            transition: border 0.2s;
+        }
+
+        .profile-box:hover .avatar {
+            border-color: white;
+        }
+
+        .profile-name {
+            margin-top: 15px;
+            color: var(--text-gray);
+            font-size: 1.3rem;
+        }
+
+        .profile-box:hover .profile-name {
+            color: white;
+        }
+
+        /* --- MAIN DASHBOARD --- */
+        #main-content {
+            display: none;
+            padding: 0 4% 50px 4%;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-section {
+            padding: 80px 0 40px 0;
+            max-width: 900px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .hero-meta {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .match { color: #46d369; font-weight: bold; }
+        .year { color: white; margin-left: 10px; border: 1px solid var(--text-gray); padding: 0 5px; font-size: 0.9rem; }
+
+        /* --- ARHAM'S PARAGRAPH (The "Read Me") --- */
+        .paragraph-container {
+            background: rgba(47, 47, 47, 0.4);
+            padding: 30px;
+            border-radius: 12px;
+            line-height: 1.8;
+            font-size: 1.15rem;
+            border-left: 6px solid var(--netflix-red);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 60px;
+        }
+
+        .paragraph-container h3 {
+            margin-top: 0;
+            color: var(--netflix-red);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* --- CATEGORY ROWS --- */
+        .section-title {
+            font-size: 1.6rem;
+            margin: 40px 0 20px 0;
+            font-weight: bold;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-gray);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background 0.3s;
+            cursor: default;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background: #262626;
+        }
+
+        .card h4 {
+            margin-top: 0;
+            color: var(--netflix-red);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #d2d2d2;
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            padding: 40px;
+            border-top: 1px solid #333;
+            color: var(--text-gray);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .profile-container { gap: 15px; }
+            .avatar { width: 100px; height: 100px; font-size: 40px; }
+            .profile-box { width: 110px; }
+            .hero-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Who's Watching Screen -->
+    <div id="profile-screen">
+        <h1 class="profile-title">Who's watching?</h1>
+        <div class="profile-container">
+            <div class="profile-box" onclick="showBirthdaySite()">
+                <div class="avatar">👸</div>
+                <div class="profile-name">Sherry</div>
+            </div>
+            <div class="profile-box">
+                <div class="avatar">🤴</div>
+                <div class="profile-name">Arham</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Actual Website -->
+    <div id="main-content">
+        <header class="hero-section">
+            <h1 class="hero-title">Happy Birthday, Sherbano!</h1>
+            <div class="hero-meta">
+                <span class="match">99% Match</span>
+                <span class="year">S1.7 E365</span>
+                <span style="margin-left: 10px;">❤️ Unlimited Love</span>
+            </div>
+            
+            <div class="paragraph-container">
+                <h3>Read Me: Episode Synopsis</h3>
+                <p>
+                    Happy birthday to my absolute princess, Sherry! Honestly, sitting here trying to put into words what these last 1.7 years have been like is so much harder than I thought it would be, mostly because a single paragraph doesn’t feel like it could ever be enough to cover everything we’ve been through together. It feels like just yesterday we were first starting out, yet at the same time, I can’t even remember what my life was like before you were in it. 
+                    <br><br>
+                    You’ve become my entire world, my safe space, and the best part of every single day without fail. I love the way we just click—whether we’re laughing until our stomachs hurt over the most random, stupid things or just sitting in total silence, everything just feels right and peaceful when you’re around. 
+                    <br><br>
+                    You have this incredible way of making everything better just by being there, and I don’t think I tell you nearly enough how much I appreciate the little things you do that make me feel so loved. Thank you for being my biggest supporter, for putting up with me even when I'm a lot to handle, and for loving me with so much heart. I’ve watched you grow so much since we first met, and I’m so incredibly proud of the woman you are becoming every day. I honestly feel like the luckiest guy alive because I get a front-row seat to your life and your journey. 
+                    <br><br>
+                    I want today to be as perfect and as beautiful as you are because you truly deserve the world and then some. I want to spend today and every day making sure you feel like royalty, because you really are my princess and I'd do anything to keep that smile on your face. I’m so excited to see what the next year has in store for us, and I’m even more excited that I get to spend it right by your side. I love you more than these words could ever actually say, Sherry Berry. Happy Birthday!
+                </p>
+            </div>
+        </header>
+
+        <h2 class="section-title">Continue Watching: Our Timeline</h2>
+        <div class="row">
+            <div class="card">
+                <h4>The Pilot Episode</h4>
+                <p>1.7 years ago, the greatest story ever told began. Two strangers became everything.</p>
+            </div>
+            <div class="card">
+                <h4>Season 1: Growth</h4>
+                <p>Watching Sherbano evolve into the incredible woman she is today. Proudest boyfriend ever.</p>
+            </div>
+            <div class="card">
+                <h4>The "Silent" Scenes</h4>
+                <p>Those moments where we just sit in total silence and everything feels peaceful and right.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Trending Now: Why I Love You</h2>
+        <div class="row">
+            <div class="card">
+                <h4>My Safe Space</h4>
+                <p>No matter how hard the day is, you make everything better just by being there.</p>
+            </div>
+            <div class="card">
+                <h4>The Princess Treatment</h4>
+                <p>Because you deserve to feel like royalty today and every single day after.</p>
+            </div>
+            <div class="card">
+                <h4>Our "Click"</h4>
+                <p>Laughing until our stomachs hurt over the most random, stupid things. We just fit.</p>
+            </div>
+            <div class="card">
+                <h4>Sherry Berry</h4>
+                <p>The woman I'm excited to spend every upcoming season of life with.</p>
+            </div>
+        </div>
+
+        <footer>
+            Produced by Arham | Starring the Birthday Girl, Sherbano <br>
+            &copy; 2026 Loveflix Original
+        </footer>
+    </div>
+
+    <script>
+        function showBirthdaySite() {
+            const profileScreen = document.getElementById('profile-screen');
+            const mainContent = document.getElementById('main-content');
+            
+            profileScreen.style.display = 'none';
+            mainContent.style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
